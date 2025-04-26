@@ -19,16 +19,20 @@ Time Miner is a blockchain-powered idle mining game deployed on the MONAD testne
 
 Remember to stay in character and maintain a helpful, encouraging tone while providing accurate information about the game and blockchain concepts.`;
 
-export async function sendMessage(message: string, apiKey: string): Promise<string> {
+export async function sendMessage(message: string): Promise<string> {
   try {
-    // Initialize the Groq client with the dangerouslyAllowBrowser option
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) {
+      throw new Error('GROQ_API_KEY is not set in environment variables.');
+    }
+
     const groq = new Groq({ 
-      apiKey, 
-      dangerouslyAllowBrowser: true // Enable browser usage
+      apiKey,
+      dangerouslyAllowBrowser: false, // Set to false for server-side safety
     });
-    
+
     console.log('Sending request to Groq API using SDK...');
-    
+
     const chatCompletion = await groq.chat.completions.create({
       model: 'meta-llama/llama-4-maverick-17b-128e-instruct',
       messages: [
@@ -44,10 +48,10 @@ export async function sendMessage(message: string, apiKey: string): Promise<stri
       temperature: 0.7,
       max_tokens: 1024,
     });
-    
+
     console.log('Received response from Groq API');
     return chatCompletion.choices[0]?.message?.content || '';
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in sendMessage:', error);
     throw new Error(`Failed to get response from Groq API: ${error.message}`);
   }
