@@ -148,7 +148,7 @@ export default function TimeMiner() {
   useEffect(() => {
     const interval = setInterval(() => {
       refetchAll();
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
