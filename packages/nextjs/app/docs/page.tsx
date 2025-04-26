@@ -469,7 +469,7 @@ export default function Documentation() {
                     <h3 className="text-lg font-bold">Ready to Start Mining?</h3>
                     <p className="mb-4">Join thousands of miners excavating digital treasures from the blockchain!</p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Go to Time Miner</button>
+                      <a href="https://timeminer.vercel.app/" className="btn btn-primary">Go to Time Miner</a>
                     </div>
                   </div>
                 </div>
