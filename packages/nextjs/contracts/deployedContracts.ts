@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   10143: {
     TimeMiner: {
-      address: "0x73fFE1b46b9f5DFb3EA8A6294406b5Ec86c12C47",
+      address: "0x1BF07d9620c286Ffb8DeD071246df673E8b5082c",
       abi: [
         {
           inputs: [],
