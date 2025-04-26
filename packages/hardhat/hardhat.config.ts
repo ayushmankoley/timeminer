@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.20",
+        version: "0.8.23",
         settings: {
           optimizer: {
             enabled: true,
@@ -39,7 +39,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "monadTestnet",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -53,6 +53,16 @@ const config: HardhatUserConfig = {
       forking: {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
+      },
+    },
+    monadTestnet: {
+      url: "https://testnet-rpc.monad.xyz",
+      accounts: [deployerPrivateKey],
+      chainId: 10143,
+      verify: {
+        etherscan: {
+          apiUrl: "https://testnet.monadexplorer.com",
+        },
       },
     },
     mainnet: {

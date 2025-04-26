@@ -1,0 +1,891 @@
+{
+  "address": "0x1BF07d9620c286Ffb8DeD071246df673E8b5082c",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableInvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_LEVEL",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_MINERS_PER_USER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINER1_INITIAL_COST",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINER2_INITIAL_COST",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINER3_INITIAL_COST",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SUPPLY_CAP",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_getCurrentRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "_getTotalPower",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalPower",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "allMiners",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "minerType",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyMiner",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "claimOre",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gameEnd",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCurrentMiningRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minerType",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMinerStats",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "exists",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "level",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "power",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalMined",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "oreSinceLast",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastClaimTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTotalGlobalPower",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "numberOfMiners",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalMinedByUser",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner1Powers",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner1UpgradeCosts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner2Powers",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner2UpgradeCosts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner3Powers",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miner3UpgradeCosts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "minerCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "miners",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "exists",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "level",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastClaim",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalMined",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "power",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ore",
+      "outputs": [
+        {
+          "internalType": "contract OREToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "registeredMiners",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalMinedGlobal",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "minerType",
+          "type": "uint256"
+        }
+      ],
+      "name": "upgradeMiner",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x28c65226338dfdbe876d586eab1f32d582d4d828b56a49b2745081951ea14a01",
+  "receipt": {
+    "to": null,
+    "from": "0xeeD774907f48ce9FAc73952A6f2507027E759427",
+    "contractAddress": "0x1BF07d9620c286Ffb8DeD071246df673E8b5082c",
+    "transactionIndex": 6,
+    "gasUsed": "2551202",
+    "logsBloom": "0x00000000000000000040000000002000000000000000000000820000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000003000000000000000000000000000000000000020000000000000000000800000001000000000000000000000000400000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000080000000000000000000000200000000008000008000000000000020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x241c5ee118a0888965c6c0d9bcb04d5b54dcc0340dcbfdea4760a838a07d7cc6",
+    "transactionHash": "0x28c65226338dfdbe876d586eab1f32d582d4d828b56a49b2745081951ea14a01",
+    "logs": [
+      {
+        "transactionIndex": 6,
+        "blockNumber": 14074919,
+        "transactionHash": "0x28c65226338dfdbe876d586eab1f32d582d4d828b56a49b2745081951ea14a01",
+        "address": "0x1BF07d9620c286Ffb8DeD071246df673E8b5082c",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000eed774907f48ce9fac73952a6f2507027e759427"
+        ],
+        "data": "0x",
+        "logIndex": 12,
+        "blockHash": "0x241c5ee118a0888965c6c0d9bcb04d5b54dcc0340dcbfdea4760a838a07d7cc6"
+      },
+      {
+        "transactionIndex": 6,
+        "blockNumber": 14074919,
+        "transactionHash": "0x28c65226338dfdbe876d586eab1f32d582d4d828b56a49b2745081951ea14a01",
+        "address": "0xC23C95ffEc71d5FD171B77182ce266a37680518a",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000001bf07d9620c286ffb8ded071246df673e8b5082c"
+        ],
+        "data": "0x",
+        "logIndex": 13,
+        "blockHash": "0x241c5ee118a0888965c6c0d9bcb04d5b54dcc0340dcbfdea4760a838a07d7cc6"
+      }
+    ],
+    "blockNumber": 14074919,
+    "cumulativeGasUsed": "4017491",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "d12de7bec27e28a5505ccc3114941871",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"MAX_LEVEL\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MAX_MINERS_PER_USER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINER1_INITIAL_COST\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINER2_INITIAL_COST\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINER3_INITIAL_COST\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SUPPLY_CAP\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_getCurrentRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"_getTotalPower\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalPower\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"allMiners\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"minerType\",\"type\":\"uint256\"}],\"name\":\"buyMiner\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimFunds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claimOre\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gameEnd\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentMiningRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minerType\",\"type\":\"uint256\"}],\"name\":\"getMinerStats\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"level\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"power\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalMined\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"oreSinceLast\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastClaimTime\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalGlobalPower\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserStats\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"numberOfMiners\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalMinedByUser\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner1Powers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner1UpgradeCosts\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner2Powers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner2UpgradeCosts\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner3Powers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miner3UpgradeCosts\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"minerCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"miners\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"exists\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"level\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lastClaim\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalMined\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"power\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ore\",\"outputs\":[{\"internalType\":\"contract OREToken\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"registeredMiners\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalMinedGlobal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"minerType\",\"type\":\"uint256\"}],\"name\":\"upgradeMiner\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"errors\":{\"OwnableInvalidOwner(address)\":[{\"details\":\"The owner is not a valid owner account. (eg. `address(0)`)\"}],\"OwnableUnauthorizedAccount(address)\":[{\"details\":\"The caller account is not authorized to perform an operation.\"}]},\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/TimeMiner.sol\":\"TimeMiner\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {Context} from \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * The initial owner is set to the address provided by the deployer. This can\\n * later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    /**\\n     * @dev The caller account is not authorized to perform an operation.\\n     */\\n    error OwnableUnauthorizedAccount(address account);\\n\\n    /**\\n     * @dev The owner is not a valid owner account. (eg. `address(0)`)\\n     */\\n    error OwnableInvalidOwner(address owner);\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the address provided by the deployer as the initial owner.\\n     */\\n    constructor(address initialOwner) {\\n        if (initialOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(initialOwner);\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        if (owner() != _msgSender()) {\\n            revert OwnableUnauthorizedAccount(_msgSender());\\n        }\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        if (newOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb\",\"license\":\"MIT\"},\"@openzeppelin/contracts/interfaces/draft-IERC6093.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (interfaces/draft-IERC6093.sol)\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Standard ERC20 Errors\\n * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens.\\n */\\ninterface IERC20Errors {\\n    /**\\n     * @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     * @param balance Current balance for the interacting account.\\n     * @param needed Minimum amount required to perform a transfer.\\n     */\\n    error ERC20InsufficientBalance(address sender, uint256 balance, uint256 needed);\\n\\n    /**\\n     * @dev Indicates a failure with the token `sender`. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     */\\n    error ERC20InvalidSender(address sender);\\n\\n    /**\\n     * @dev Indicates a failure with the token `receiver`. Used in transfers.\\n     * @param receiver Address to which tokens are being transferred.\\n     */\\n    error ERC20InvalidReceiver(address receiver);\\n\\n    /**\\n     * @dev Indicates a failure with the `spender`\\u2019s `allowance`. Used in transfers.\\n     * @param spender Address that may be allowed to operate on tokens without being their owner.\\n     * @param allowance Amount of tokens a `spender` is allowed to operate with.\\n     * @param needed Minimum amount required to perform a transfer.\\n     */\\n    error ERC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);\\n\\n    /**\\n     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\\n     * @param approver Address initiating an approval operation.\\n     */\\n    error ERC20InvalidApprover(address approver);\\n\\n    /**\\n     * @dev Indicates a failure with the `spender` to be approved. Used in approvals.\\n     * @param spender Address that may be allowed to operate on tokens without being their owner.\\n     */\\n    error ERC20InvalidSpender(address spender);\\n}\\n\\n/**\\n * @dev Standard ERC721 Errors\\n * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC721 tokens.\\n */\\ninterface IERC721Errors {\\n    /**\\n     * @dev Indicates that an address can't be an owner. For example, `address(0)` is a forbidden owner in EIP-20.\\n     * Used in balance queries.\\n     * @param owner Address of the current owner of a token.\\n     */\\n    error ERC721InvalidOwner(address owner);\\n\\n    /**\\n     * @dev Indicates a `tokenId` whose `owner` is the zero address.\\n     * @param tokenId Identifier number of a token.\\n     */\\n    error ERC721NonexistentToken(uint256 tokenId);\\n\\n    /**\\n     * @dev Indicates an error related to the ownership over a particular token. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     * @param tokenId Identifier number of a token.\\n     * @param owner Address of the current owner of a token.\\n     */\\n    error ERC721IncorrectOwner(address sender, uint256 tokenId, address owner);\\n\\n    /**\\n     * @dev Indicates a failure with the token `sender`. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     */\\n    error ERC721InvalidSender(address sender);\\n\\n    /**\\n     * @dev Indicates a failure with the token `receiver`. Used in transfers.\\n     * @param receiver Address to which tokens are being transferred.\\n     */\\n    error ERC721InvalidReceiver(address receiver);\\n\\n    /**\\n     * @dev Indicates a failure with the `operator`\\u2019s approval. Used in transfers.\\n     * @param operator Address that may be allowed to operate on tokens without being their owner.\\n     * @param tokenId Identifier number of a token.\\n     */\\n    error ERC721InsufficientApproval(address operator, uint256 tokenId);\\n\\n    /**\\n     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\\n     * @param approver Address initiating an approval operation.\\n     */\\n    error ERC721InvalidApprover(address approver);\\n\\n    /**\\n     * @dev Indicates a failure with the `operator` to be approved. Used in approvals.\\n     * @param operator Address that may be allowed to operate on tokens without being their owner.\\n     */\\n    error ERC721InvalidOperator(address operator);\\n}\\n\\n/**\\n * @dev Standard ERC1155 Errors\\n * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC1155 tokens.\\n */\\ninterface IERC1155Errors {\\n    /**\\n     * @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     * @param balance Current balance for the interacting account.\\n     * @param needed Minimum amount required to perform a transfer.\\n     * @param tokenId Identifier number of a token.\\n     */\\n    error ERC1155InsufficientBalance(address sender, uint256 balance, uint256 needed, uint256 tokenId);\\n\\n    /**\\n     * @dev Indicates a failure with the token `sender`. Used in transfers.\\n     * @param sender Address whose tokens are being transferred.\\n     */\\n    error ERC1155InvalidSender(address sender);\\n\\n    /**\\n     * @dev Indicates a failure with the token `receiver`. Used in transfers.\\n     * @param receiver Address to which tokens are being transferred.\\n     */\\n    error ERC1155InvalidReceiver(address receiver);\\n\\n    /**\\n     * @dev Indicates a failure with the `operator`\\u2019s approval. Used in transfers.\\n     * @param operator Address that may be allowed to operate on tokens without being their owner.\\n     * @param owner Address of the current owner of a token.\\n     */\\n    error ERC1155MissingApprovalForAll(address operator, address owner);\\n\\n    /**\\n     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\\n     * @param approver Address initiating an approval operation.\\n     */\\n    error ERC1155InvalidApprover(address approver);\\n\\n    /**\\n     * @dev Indicates a failure with the `operator` to be approved. Used in approvals.\\n     * @param operator Address that may be allowed to operate on tokens without being their owner.\\n     */\\n    error ERC1155InvalidOperator(address operator);\\n\\n    /**\\n     * @dev Indicates an array length mismatch between ids and values in a safeBatchTransferFrom operation.\\n     * Used in batch transfers.\\n     * @param idsLength Length of the array of token identifiers\\n     * @param valuesLength Length of the array of token amounts\\n     */\\n    error ERC1155InvalidArrayLength(uint256 idsLength, uint256 valuesLength);\\n}\\n\",\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/ERC20.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {IERC20} from \\\"./IERC20.sol\\\";\\nimport {IERC20Metadata} from \\\"./extensions/IERC20Metadata.sol\\\";\\nimport {Context} from \\\"../../utils/Context.sol\\\";\\nimport {IERC20Errors} from \\\"../../interfaces/draft-IERC6093.sol\\\";\\n\\n/**\\n * @dev Implementation of the {IERC20} interface.\\n *\\n * This implementation is agnostic to the way tokens are created. This means\\n * that a supply mechanism has to be added in a derived contract using {_mint}.\\n *\\n * TIP: For a detailed writeup see our guide\\n * https://forum.openzeppelin.com/t/how-to-implement-erc20-supply-mechanisms/226[How\\n * to implement supply mechanisms].\\n *\\n * The default value of {decimals} is 18. To change this, you should override\\n * this function so it returns a different value.\\n *\\n * We have followed general OpenZeppelin Contracts guidelines: functions revert\\n * instead returning `false` on failure. This behavior is nonetheless\\n * conventional and does not conflict with the expectations of ERC20\\n * applications.\\n *\\n * Additionally, an {Approval} event is emitted on calls to {transferFrom}.\\n * This allows applications to reconstruct the allowance for all accounts just\\n * by listening to said events. Other implementations of the EIP may not emit\\n * these events, as it isn't required by the specification.\\n */\\nabstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {\\n    mapping(address account => uint256) private _balances;\\n\\n    mapping(address account => mapping(address spender => uint256)) private _allowances;\\n\\n    uint256 private _totalSupply;\\n\\n    string private _name;\\n    string private _symbol;\\n\\n    /**\\n     * @dev Sets the values for {name} and {symbol}.\\n     *\\n     * All two of these values are immutable: they can only be set once during\\n     * construction.\\n     */\\n    constructor(string memory name_, string memory symbol_) {\\n        _name = name_;\\n        _symbol = symbol_;\\n    }\\n\\n    /**\\n     * @dev Returns the name of the token.\\n     */\\n    function name() public view virtual returns (string memory) {\\n        return _name;\\n    }\\n\\n    /**\\n     * @dev Returns the symbol of the token, usually a shorter version of the\\n     * name.\\n     */\\n    function symbol() public view virtual returns (string memory) {\\n        return _symbol;\\n    }\\n\\n    /**\\n     * @dev Returns the number of decimals used to get its user representation.\\n     * For example, if `decimals` equals `2`, a balance of `505` tokens should\\n     * be displayed to a user as `5.05` (`505 / 10 ** 2`).\\n     *\\n     * Tokens usually opt for a value of 18, imitating the relationship between\\n     * Ether and Wei. This is the default value returned by this function, unless\\n     * it's overridden.\\n     *\\n     * NOTE: This information is only used for _display_ purposes: it in\\n     * no way affects any of the arithmetic of the contract, including\\n     * {IERC20-balanceOf} and {IERC20-transfer}.\\n     */\\n    function decimals() public view virtual returns (uint8) {\\n        return 18;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-totalSupply}.\\n     */\\n    function totalSupply() public view virtual returns (uint256) {\\n        return _totalSupply;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-balanceOf}.\\n     */\\n    function balanceOf(address account) public view virtual returns (uint256) {\\n        return _balances[account];\\n    }\\n\\n    /**\\n     * @dev See {IERC20-transfer}.\\n     *\\n     * Requirements:\\n     *\\n     * - `to` cannot be the zero address.\\n     * - the caller must have a balance of at least `value`.\\n     */\\n    function transfer(address to, uint256 value) public virtual returns (bool) {\\n        address owner = _msgSender();\\n        _transfer(owner, to, value);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-allowance}.\\n     */\\n    function allowance(address owner, address spender) public view virtual returns (uint256) {\\n        return _allowances[owner][spender];\\n    }\\n\\n    /**\\n     * @dev See {IERC20-approve}.\\n     *\\n     * NOTE: If `value` is the maximum `uint256`, the allowance is not updated on\\n     * `transferFrom`. This is semantically equivalent to an infinite approval.\\n     *\\n     * Requirements:\\n     *\\n     * - `spender` cannot be the zero address.\\n     */\\n    function approve(address spender, uint256 value) public virtual returns (bool) {\\n        address owner = _msgSender();\\n        _approve(owner, spender, value);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev See {IERC20-transferFrom}.\\n     *\\n     * Emits an {Approval} event indicating the updated allowance. This is not\\n     * required by the EIP. See the note at the beginning of {ERC20}.\\n     *\\n     * NOTE: Does not update the allowance if the current allowance\\n     * is the maximum `uint256`.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` and `to` cannot be the zero address.\\n     * - `from` must have a balance of at least `value`.\\n     * - the caller must have allowance for ``from``'s tokens of at least\\n     * `value`.\\n     */\\n    function transferFrom(address from, address to, uint256 value) public virtual returns (bool) {\\n        address spender = _msgSender();\\n        _spendAllowance(from, spender, value);\\n        _transfer(from, to, value);\\n        return true;\\n    }\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from `from` to `to`.\\n     *\\n     * This internal function is equivalent to {transfer}, and can be used to\\n     * e.g. implement automatic token fees, slashing mechanisms, etc.\\n     *\\n     * Emits a {Transfer} event.\\n     *\\n     * NOTE: This function is not virtual, {_update} should be overridden instead.\\n     */\\n    function _transfer(address from, address to, uint256 value) internal {\\n        if (from == address(0)) {\\n            revert ERC20InvalidSender(address(0));\\n        }\\n        if (to == address(0)) {\\n            revert ERC20InvalidReceiver(address(0));\\n        }\\n        _update(from, to, value);\\n    }\\n\\n    /**\\n     * @dev Transfers a `value` amount of tokens from `from` to `to`, or alternatively mints (or burns) if `from`\\n     * (or `to`) is the zero address. All customizations to transfers, mints, and burns should be done by overriding\\n     * this function.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function _update(address from, address to, uint256 value) internal virtual {\\n        if (from == address(0)) {\\n            // Overflow check required: The rest of the code assumes that totalSupply never overflows\\n            _totalSupply += value;\\n        } else {\\n            uint256 fromBalance = _balances[from];\\n            if (fromBalance < value) {\\n                revert ERC20InsufficientBalance(from, fromBalance, value);\\n            }\\n            unchecked {\\n                // Overflow not possible: value <= fromBalance <= totalSupply.\\n                _balances[from] = fromBalance - value;\\n            }\\n        }\\n\\n        if (to == address(0)) {\\n            unchecked {\\n                // Overflow not possible: value <= totalSupply or value <= fromBalance <= totalSupply.\\n                _totalSupply -= value;\\n            }\\n        } else {\\n            unchecked {\\n                // Overflow not possible: balance + value is at most totalSupply, which we know fits into a uint256.\\n                _balances[to] += value;\\n            }\\n        }\\n\\n        emit Transfer(from, to, value);\\n    }\\n\\n    /**\\n     * @dev Creates a `value` amount of tokens and assigns them to `account`, by transferring it from address(0).\\n     * Relies on the `_update` mechanism\\n     *\\n     * Emits a {Transfer} event with `from` set to the zero address.\\n     *\\n     * NOTE: This function is not virtual, {_update} should be overridden instead.\\n     */\\n    function _mint(address account, uint256 value) internal {\\n        if (account == address(0)) {\\n            revert ERC20InvalidReceiver(address(0));\\n        }\\n        _update(address(0), account, value);\\n    }\\n\\n    /**\\n     * @dev Destroys a `value` amount of tokens from `account`, lowering the total supply.\\n     * Relies on the `_update` mechanism.\\n     *\\n     * Emits a {Transfer} event with `to` set to the zero address.\\n     *\\n     * NOTE: This function is not virtual, {_update} should be overridden instead\\n     */\\n    function _burn(address account, uint256 value) internal {\\n        if (account == address(0)) {\\n            revert ERC20InvalidSender(address(0));\\n        }\\n        _update(account, address(0), value);\\n    }\\n\\n    /**\\n     * @dev Sets `value` as the allowance of `spender` over the `owner` s tokens.\\n     *\\n     * This internal function is equivalent to `approve`, and can be used to\\n     * e.g. set automatic allowances for certain subsystems, etc.\\n     *\\n     * Emits an {Approval} event.\\n     *\\n     * Requirements:\\n     *\\n     * - `owner` cannot be the zero address.\\n     * - `spender` cannot be the zero address.\\n     *\\n     * Overrides to this logic should be done to the variant with an additional `bool emitEvent` argument.\\n     */\\n    function _approve(address owner, address spender, uint256 value) internal {\\n        _approve(owner, spender, value, true);\\n    }\\n\\n    /**\\n     * @dev Variant of {_approve} with an optional flag to enable or disable the {Approval} event.\\n     *\\n     * By default (when calling {_approve}) the flag is set to true. On the other hand, approval changes made by\\n     * `_spendAllowance` during the `transferFrom` operation set the flag to false. This saves gas by not emitting any\\n     * `Approval` event during `transferFrom` operations.\\n     *\\n     * Anyone who wishes to continue emitting `Approval` events on the`transferFrom` operation can force the flag to\\n     * true using the following override:\\n     * ```\\n     * function _approve(address owner, address spender, uint256 value, bool) internal virtual override {\\n     *     super._approve(owner, spender, value, true);\\n     * }\\n     * ```\\n     *\\n     * Requirements are the same as {_approve}.\\n     */\\n    function _approve(address owner, address spender, uint256 value, bool emitEvent) internal virtual {\\n        if (owner == address(0)) {\\n            revert ERC20InvalidApprover(address(0));\\n        }\\n        if (spender == address(0)) {\\n            revert ERC20InvalidSpender(address(0));\\n        }\\n        _allowances[owner][spender] = value;\\n        if (emitEvent) {\\n            emit Approval(owner, spender, value);\\n        }\\n    }\\n\\n    /**\\n     * @dev Updates `owner` s allowance for `spender` based on spent `value`.\\n     *\\n     * Does not update the allowance value in case of infinite allowance.\\n     * Revert if not enough allowance is available.\\n     *\\n     * Does not emit an {Approval} event.\\n     */\\n    function _spendAllowance(address owner, address spender, uint256 value) internal virtual {\\n        uint256 currentAllowance = allowance(owner, spender);\\n        if (currentAllowance != type(uint256).max) {\\n            if (currentAllowance < value) {\\n                revert ERC20InsufficientAllowance(spender, currentAllowance, value);\\n            }\\n            unchecked {\\n                _approve(owner, spender, currentAllowance - value, false);\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the value of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the value of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets a `value` amount of tokens as the allowance of `spender` over the\\n     * caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 value) external returns (bool);\\n\\n    /**\\n     * @dev Moves a `value` amount of tokens from `from` to `to` using the\\n     * allowance mechanism. `value` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 value) external returns (bool);\\n}\\n\",\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/IERC20Metadata.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {IERC20} from \\\"../IERC20.sol\\\";\\n\\n/**\\n * @dev Interface for the optional metadata functions from the ERC20 standard.\\n */\\ninterface IERC20Metadata is IERC20 {\\n    /**\\n     * @dev Returns the name of the token.\\n     */\\n    function name() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the symbol of the token.\\n     */\\n    function symbol() external view returns (string memory);\\n\\n    /**\\n     * @dev Returns the decimals places of the token.\\n     */\\n    function decimals() external view returns (uint8);\\n}\\n\",\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)\\n\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    function _contextSuffixLength() internal view virtual returns (uint256) {\\n        return 0;\\n    }\\n}\\n\",\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\"},\"contracts/TimeMiner.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.23;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/ERC20.sol\\\";\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\n// Represents the fungible ORE token with a capped supply\\ncontract OREToken is ERC20, Ownable {\\n    uint256 public immutable cap; // Total supply cannot exceed this\\n\\n    // Sets the token name, symbol, and total supply cap. No initial mint.\\n    constructor(uint256 initialCap) ERC20(\\\"Ore Token\\\", \\\"ORE\\\") Ownable(msg.sender) {\\n        cap = initialCap;\\n    }\\n\\n    // Allows owner to mint new tokens, up to the defined cap\\n    function mint(address to, uint256 amount) external onlyOwner {\\n        require(totalSupply() + amount <= cap, \\\"Cap exceeded\\\"); // Enforce cap\\n        _mint(to, amount);\\n    }\\n}\\n\\n// Manages the Time Miner game logic\\ncontract TimeMiner is Ownable {\\n    struct MinerData {\\n        bool exists;\\n        uint256 level;\\n        uint256 lastClaim;\\n        uint256 totalMined;\\n        uint256 power;  // Added power field to store current power level\\n    }\\n\\n    // Track miners for each user\\n    mapping(address => mapping(uint256 => MinerData)) public miners;\\n    mapping(address => uint256) public minerCount;  // Track how many miners a user has\\n    address[] public allMiners; // List of all miner addresses\\n    mapping(address => bool) public registeredMiners; // Track if an address is registered\\n\\n    uint256 public totalMinedGlobal;\\n    uint256 public immutable gameEnd;\\n    OREToken public ore;\\n\\n    uint256 public constant MAX_LEVEL = 5;\\n    uint256 public constant MAX_MINERS_PER_USER = 3;\\n    uint256 public constant SUPPLY_CAP = 30_000_000 ether; // Max total ORE supply (scaled to 30M)\\n    \\n    // Costs for miner 1 (original miner)\\n    uint256 public constant MINER1_INITIAL_COST = 0.1 ether;\\n    uint256[4] public miner1UpgradeCosts = [0.025 ether, 0.05 ether, 0.1 ether, 0.2 ether];\\n    uint256[5] public miner1Powers = [1, 2, 3, 4, 5]; // Powers for levels 1-5\\n    \\n    // Costs for miner 2\\n    uint256 public constant MINER2_INITIAL_COST = 0.4 ether;\\n    uint256[4] public miner2UpgradeCosts = [0.15 ether, 0.25 ether, 0.5 ether, 0.7 ether];\\n    uint256[5] public miner2Powers = [1, 2, 3, 4, 5]; // Powers for levels 1-5\\n    \\n    // Costs for miner 3\\n    uint256 public constant MINER3_INITIAL_COST = 1.0 ether;\\n    uint256[4] public miner3UpgradeCosts = [0.5 ether, 1.0 ether, 1.25 ether, 2.25 ether];\\n    uint256[5] public miner3Powers = [2, 4, 6, 8, 10]; // Powers for levels 1-5\\n\\n    // Deploys the ORE token with the specified cap and sets game end time\\n    constructor() Ownable(msg.sender) {\\n        ore = new OREToken(SUPPLY_CAP); // Deploy OREToken with 30M ether cap\\n        gameEnd = block.timestamp + 365 days;\\n    }\\n\\n    modifier gameActive() {\\n        require(block.timestamp <= gameEnd, \\\"Game over\\\");\\n        _;\\n    }\\n\\n    // Buy a new miner (1st, 2nd, or 3rd)\\n    function buyMiner(uint256 minerType) external payable gameActive {\\n        require(minerType >= 1 && minerType <= MAX_MINERS_PER_USER, \\\"Invalid miner type\\\");\\n        require(minerCount[msg.sender] < MAX_MINERS_PER_USER, \\\"Max miners reached\\\");\\n        require(minerType == minerCount[msg.sender] + 1, \\\"Must buy miners in order\\\");\\n        \\n        uint256 cost;\\n        uint256 initialPower;\\n        \\n        if (minerType == 1) {\\n            cost = MINER1_INITIAL_COST;\\n            initialPower = miner1Powers[0];\\n        } else if (minerType == 2) {\\n            cost = MINER2_INITIAL_COST;\\n            initialPower = miner2Powers[0];\\n        } else if (minerType == 3) {\\n            cost = MINER3_INITIAL_COST;\\n            initialPower = miner3Powers[0];\\n        }\\n        \\n        require(msg.value == cost, \\\"Incorrect ETH amount\\\");\\n        \\n        // Create the new miner\\n        miners[msg.sender][minerType] = MinerData(true, 1, block.timestamp, 0, initialPower);\\n        minerCount[msg.sender]++;\\n        \\n        // Register the miner address if not already registered\\n        if (!registeredMiners[msg.sender]) {\\n            allMiners.push(msg.sender);\\n            registeredMiners[msg.sender] = true;\\n        }\\n    }\\n\\n    // Upgrade a specific miner\\n    function upgradeMiner(uint256 minerType) external payable gameActive {\\n        require(minerType >= 1 && minerType <= MAX_MINERS_PER_USER, \\\"Invalid miner type\\\");\\n        \\n        MinerData storage miner = miners[msg.sender][minerType];\\n        require(miner.exists, \\\"Miner doesn't exist\\\");\\n        require(miner.level < MAX_LEVEL, \\\"Max level reached\\\");\\n\\n        // Claim ORE before upgrading\\n        _claimOre(msg.sender);\\n\\n        uint256 cost;\\n        uint256 newPower;\\n        \\n        if (minerType == 1) {\\n            cost = miner1UpgradeCosts[miner.level - 1];\\n            newPower = miner1Powers[miner.level]; // New power after upgrade\\n        } else if (minerType == 2) {\\n            cost = miner2UpgradeCosts[miner.level - 1];\\n            newPower = miner2Powers[miner.level]; // New power after upgrade\\n        } else if (minerType == 3) {\\n            cost = miner3UpgradeCosts[miner.level - 1];\\n            newPower = miner3Powers[miner.level]; // New power after upgrade\\n        }\\n        \\n        require(msg.value == cost, \\\"Incorrect ETH amount\\\");\\n\\n        miner.level++;\\n        miner.power = newPower; // Update power level\\n    }\\n\\n    // Claim earned ORE from all miners\\n    function claimOre() external gameActive {\\n        require(minerCount[msg.sender] > 0, \\\"No miners\\\");\\n        _claimOre(msg.sender);\\n    }\\n\\n    // Internal function to calculate and mint ore for all of a user's miners\\n    function _claimOre(address user) internal {\\n        uint256 totalEarned = 0;\\n        uint256 timeElapsed;\\n        uint256 earned;\\n        uint256 totalPower = _getTotalPower();\\n        uint256 rate = _getCurrentRate();\\n        \\n        // Process each miner the user owns\\n        for (uint256 i = 1; i <= minerCount[user]; i++) {\\n            MinerData storage miner = miners[user][i];\\n            \\n            timeElapsed = block.timestamp - miner.lastClaim;\\n            \\n            if (timeElapsed > 0 && totalPower > 0) {\\n                earned = (timeElapsed * miner.power * rate) / totalPower;\\n                \\n                miner.lastClaim = block.timestamp;\\n                miner.totalMined += earned;\\n                totalEarned += earned;\\n            }\\n        }\\n        \\n        if (totalEarned == 0) return;\\n        \\n        // Game logic check against supply cap\\n        if (totalMinedGlobal + totalEarned > SUPPLY_CAP) {\\n            totalEarned = SUPPLY_CAP - totalMinedGlobal;\\n            if (totalEarned == 0) return;\\n        }\\n        \\n        totalMinedGlobal += totalEarned;\\n        ore.mint(user, totalEarned); // Mint ORE (checked against cap in OREToken)\\n    }\\n\\n    // Get the current mining rate based on total supply\\n    function getCurrentMiningRate() external view returns (uint256) {\\n        return _getCurrentRate();\\n    }\\n\\n    // Get the total mining power of all miners\\n    function getTotalGlobalPower() external view returns (uint256) {\\n        return _getTotalPower();\\n    }\\n\\n    // Get stats for a specific miner of a user\\n    function getMinerStats(address user, uint256 minerType) external view returns (\\n        bool exists,\\n        uint256 level,\\n        uint256 power,\\n        uint256 totalMined,\\n        uint256 oreSinceLast,\\n        uint256 lastClaimTime\\n    ) {\\n        require(minerType >= 1 && minerType <= MAX_MINERS_PER_USER, \\\"Invalid miner type\\\");\\n        \\n        MinerData memory m = miners[user][minerType];\\n        exists = m.exists;\\n        level = m.level;\\n        power = m.power;\\n        totalMined = m.totalMined;\\n        lastClaimTime = m.lastClaim;\\n        oreSinceLast = 0;\\n\\n        if (m.exists && block.timestamp > m.lastClaim && totalMinedGlobal < SUPPLY_CAP) {\\n            uint256 totalPower = _getTotalPower();\\n            uint256 rate = _getCurrentRate();\\n            if (totalPower > 0) {\\n                uint256 timeElapsed = block.timestamp - m.lastClaim;\\n                uint256 potentialEarned = (timeElapsed * m.power * rate) / totalPower;\\n\\n                if (totalMinedGlobal + potentialEarned > SUPPLY_CAP) {\\n                    oreSinceLast = SUPPLY_CAP - totalMinedGlobal;\\n                } else {\\n                    oreSinceLast = potentialEarned;\\n                }\\n            }\\n        }\\n    }\\n\\n    // Get all stats for a user (number of miners and total mined)\\n    function getUserStats(address user) external view returns (\\n        uint256 numberOfMiners,\\n        uint256 totalMinedByUser\\n    ) {\\n        numberOfMiners = minerCount[user];\\n        totalMinedByUser = 0;\\n        \\n        for (uint256 i = 1; i <= minerCount[user]; i++) {\\n            totalMinedByUser += miners[user][i].totalMined;\\n        }\\n    }\\n\\n    // Calculates the current ORE mining rate (thresholds scaled for 30M supply)\\n    function _getCurrentRate() public view returns (uint256) {\\n        if (totalMinedGlobal < 468750 ether) return 100 ether;\\n        if (totalMinedGlobal < 937500 ether) return 50 ether;\\n        if (totalMinedGlobal < 1875000 ether) return 25 ether;\\n        if (totalMinedGlobal < 3750000 ether) return 12 ether;\\n        if (totalMinedGlobal < 7500000 ether) return 6 ether;\\n        if (totalMinedGlobal < 15000000 ether) return 3 ether;\\n        if (totalMinedGlobal < 22500000 ether) return 2 ether;\\n        return 1 ether; // Final tier\\n    }\\n\\n    // Calculates the sum of all miner powers\\n    function _getTotalPower() public view returns (uint256 totalPower) {\\n        totalPower = 0;\\n        for (uint256 i = 0; i < allMiners.length; i++) {\\n            address minerAddress = allMiners[i];\\n            // Sum up power from all miners owned by this address\\n            for (uint256 j = 1; j <= minerCount[minerAddress]; j++) {\\n                if (miners[minerAddress][j].exists) {\\n                    totalPower += miners[minerAddress][j].power;\\n                }\\n            }\\n        }\\n    }\\n\\n    // Owner can withdraw ETH from the contract\\n    function claimFunds() external onlyOwner {\\n        payable(owner()).transfer(address(this).balance);\\n    }\\n\\n    // Allows the contract to receive direct ETH payments\\n    receive() external payable {}\\n}\",\"keccak256\":\"0xb529f7633dcb1bd32530171c8ad33285a0079d2524cd47274ae29dbca99dbe3a\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6101206040526658d15e1762800060a090815266b1a2bc2ec5000060c05267016345785d8a000060e0526702c68af0bb1400006101005262000046906007906004620002aa565b506040805160a0810182526001815260026020820152600391810191909152600460608201526005608082018190526200008391600b91620002f8565b5060408051608081018252670214e8348c4f000081526703782dace9d9000060208201526706f05b59d3b20000918101919091526709b6e64a8ec600006060820152620000d5906010906004620002aa565b506040805160a0810182526001815260026020820152600391810191909152600460608201526005608082018190526200011291601491620002f8565b50604080516080810182526706f05b59d3b200008152670de0b6b3a76400006020820152671158e460913d000091810191909152671f399b1438a10000606082015262000164906019906004620002aa565b506040805160a081018252600281526004602082015260069181019190915260086060820152600a6080820152620001a190601d906005620002f8565b50348015620001af57600080fd5b503380620001d757604051631e4fbdf760e01b81526000600482015260240160405180910390fd5b620001e2816200025a565b506a18d0bf423c03d8de000000604051620001fd906200032e565b908152602001604051809103906000f08015801562000220573d6000803e3d6000fd5b50600680546001600160a01b0319166001600160a01b039290921691909117905562000251426301e1338062000353565b6080526200037b565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b8260048101928215620002e6579160200282015b82811115620002e657825182906001600160401b0316905591602001919060010190620002be565b50620002f49291506200033c565b5090565b8260058101928215620002e6579160200282015b82811115620002e6578251829060ff169055916020019190600101906200030c565b610c55806200191583390190565b5b80821115620002f457600081556001016200033d565b808201808211156200037557634e487b7160e01b600052601160045260246000fd5b92915050565b608051611569620003ac6000396000818161024c0152818161068801528181610a0c0152610c2101526115696000f3fe6080604052600436106101e65760003560e01c806362de3bd111610102578063ac30777311610095578063cc372aed11610064578063cc372aed146105fa578063df91bc111461061a578063f2fde38b1461062f578063f3afc6741461064f57600080fd5b8063ac30777314610589578063ae5820131461059e578063afaf8343146105be578063c3c97a38146105da57600080fd5b80638da5cb5b116100d15780638da5cb5b146104e95780638f3c762b14610507578063a327f4d114610547578063a49062d41461057457600080fd5b806362de3bd11461043a5780636cf639151461044d578063715018a61461049c5780638c16300d146104b157600080fd5b8063253358eb1161017a57806350d547551161014957806350d547551461036f57806352e5249a146103f0578063569bf09414610410578063612d79e81461042557600080fd5b8063253358eb146102ed578063366e3d2a146103025780633a77bf831461031e5780634e43603a1461033a57600080fd5b80630e8724b1116101b65780630e8724b11461028d5780630ec1ce16146102ad57806310541a84146102c257806321f3658b146102d857600080fd5b8062ce8066146101f25780630a762437146102255780630b8eebde1461023a5780630cfccc831461026e57600080fd5b366101ed57005b600080fd5b3480156101fe57600080fd5b5061021261020d3660046113b9565b61066f565b6040519081526020015b60405180910390f35b6102386102333660046113b9565b610686565b005b34801561024657600080fd5b506102127f000000000000000000000000000000000000000000000000000000000000000081565b34801561027a57600080fd5b506102126a18d0bf423c03d8de00000081565b34801561029957600080fd5b506102126102a83660046113b9565b6108fc565b3480156102b957600080fd5b5061021261090c565b3480156102ce57600080fd5b5061021260055481565b3480156102e457600080fd5b50610212600381565b3480156102f957600080fd5b50610238610a0a565b34801561030e57600080fd5b5061021267016345785d8a000081565b34801561032a57600080fd5b5061021267058d15e17628000081565b34801561034657600080fd5b5061035a6103553660046113ee565b610a9d565b6040805192835260208301919091520161021c565b34801561037b57600080fd5b506103c661038a366004611410565b600160208181526000938452604080852090915291835291208054918101546002820154600383015460049093015460ff909416939192909185565b6040805195151586526020860194909452928401919091526060830152608082015260a00161021c565b3480156103fc57600080fd5b5061021261040b3660046113b9565b610b24565b34801561041c57600080fd5b50610212610b34565b34801561043157600080fd5b50610212610b43565b6102386104483660046113b9565b610c1f565b34801561045957600080fd5b5061046d610468366004611410565b610eed565b6040805196151587526020870195909552938501929092526060840152608083015260a082015260c00161021c565b3480156104a857600080fd5b50610238611074565b3480156104bd57600080fd5b506006546104d1906001600160a01b031681565b6040516001600160a01b03909116815260200161021c565b3480156104f557600080fd5b506000546001600160a01b03166104d1565b34801561051357600080fd5b506105376105223660046113ee565b60046020526000908152604090205460ff1681565b604051901515815260200161021c565b34801561055357600080fd5b506102126105623660046113ee565b60026020526000908152604090205481565b34801561058057600080fd5b50610212600581565b34801561059557600080fd5b50610238611086565b3480156105aa57600080fd5b506104d16105b93660046113b9565b6110cb565b3480156105ca57600080fd5b50610212670de0b6b3a764000081565b3480156105e657600080fd5b506102126105f53660046113b9565b6110f5565b34801561060657600080fd5b506102126106153660046113b9565b611105565b34801561062657600080fd5b50610212611115565b34801561063b57600080fd5b5061023861064a3660046113ee565b61111f565b34801561065b57600080fd5b5061021261066a3660046113b9565b61115a565b6007816004811061067f57600080fd5b0154905081565b7f00000000000000000000000000000000000000000000000000000000000000004211156106cf5760405162461bcd60e51b81526004016106c69061143a565b60405180910390fd5b600181101580156106e1575060038111155b6106fd5760405162461bcd60e51b81526004016106c69061145d565b3360009081526001602090815260408083208484529091529020805460ff1661075e5760405162461bcd60e51b8152602060048201526013602482015272135a5b995c88191bd95cdb89dd08195e1a5cdd606a1b60448201526064016106c6565b60058160010154106107a65760405162461bcd60e51b815260206004820152601160248201527013585e081b195d995b081c995858da1959607a1b60448201526064016106c6565b6107af3361116a565b60008083600103610801576007600184600101546107cd919061149f565b600481106107dd576107dd6114b8565b01549150600b8360010154600581106107f8576107f86114b8565b01549050610892565b836002036108475760106001846001015461081c919061149f565b6004811061082c5761082c6114b8565b0154915060148360010154600581106107f8576107f86114b8565b8360030361089257601960018460010154610862919061149f565b60048110610872576108726114b8565b01549150601d83600101546005811061088d5761088d6114b8565b015490505b8134146108d85760405162461bcd60e51b8152602060048201526014602482015273125b98dbdc9c9958dd0811551208185b5bdd5b9d60621b60448201526064016106c6565b6001830180549060006108ea836114ce565b90915550506004909201919091555050565b600b816005811061067f57600080fd5b6000696342fd08f00f637800006005541015610930575068056bc75e2d6310000090565b69c685fa11e01ec6f00000600554101561095257506802b5e3af16b188000090565b6a018d0bf423c03d8de000006005541015610975575068015af1d78b58c4000090565b6a031a17e847807b1bc000006005541015610997575067a688906bd8b0000090565b6a06342fd08f00f63780000060055410156109b957506753444835ec58000090565b6a0c685fa11e01ec6f00000060055410156109db57506729a2241af62c000090565b6a129c8f71ad02e2a680000060055410156109fd5750671bc16d674ec8000090565b50670de0b6b3a764000090565b7f0000000000000000000000000000000000000000000000000000000000000000421115610a4a5760405162461bcd60e51b81526004016106c69061143a565b33600090815260026020526040902054610a925760405162461bcd60e51b81526020600482015260096024820152684e6f206d696e65727360b81b60448201526064016106c6565b610a9b3361116a565b565b6001600160a01b0381166000908152600260205260408120549060015b6001600160a01b0384166000908152600260205260409020548111610b1e576001600160a01b0384166000908152600160209081526040808320848452909152902060030154610b0a90836114e7565b915080610b16816114ce565b915050610aba565b50915091565b6014816005811061067f57600080fd5b6000610b3e610b43565b905090565b6000805b600354811015610c1b57600060038281548110610b6657610b666114b8565b6000918252602090912001546001600160a01b0316905060015b6001600160a01b0382166000908152600260205260409020548111610c11576001600160a01b038216600090815260016020908152604080832084845290915290205460ff1615610bff576001600160a01b0382166000908152600160209081526040808320848452909152902060040154610bfc90856114e7565b93505b80610c09816114ce565b915050610b80565b5050600101610b47565b5090565b7f0000000000000000000000000000000000000000000000000000000000000000421115610c5f5760405162461bcd60e51b81526004016106c69061143a565b60018110158015610c71575060038111155b610c8d5760405162461bcd60e51b81526004016106c69061145d565b33600090815260026020526040902054600311610ce15760405162461bcd60e51b815260206004820152601260248201527113585e081b5a5b995c9cc81c995858da195960721b60448201526064016106c6565b33600090815260026020526040902054610cfc9060016114e7565b8114610d4a5760405162461bcd60e51b815260206004820152601860248201527f4d75737420627579206d696e65727320696e206f72646572000000000000000060448201526064016106c6565b60008082600103610d6e5767016345785d8a00009150600b60005b01549050610da2565b82600203610d8a5767058d15e176280000915060146000610d65565b82600303610da2575050601d54670de0b6b3a7640000905b813414610de85760405162461bcd60e51b8152602060048201526014602482015273125b98dbdc9c9958dd0811551208185b5bdd5b9d60621b60448201526064016106c6565b6040805160a081018252600180825260208083018281524284860190815260006060860181815260808701898152338084528787528984208d855287528984209851895460ff19169015151789559451968801969096559151600280880191909155915160038701559351600490950194909455825291909152908120805491610e71836114ce565b90915550503360009081526004602052604090205460ff16610ee8576003805460018181019092557fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0180546001600160a01b031916339081179091556000908152600460205260409020805460ff191690911790555b505050565b60008060008060008060018710158015610f08575060038711155b610f245760405162461bcd60e51b81526004016106c69061145d565b5050506001600160a01b03851660009081526001602081815260408084208885528252808420815160a081018352815460ff1615801580835295830154948201859052600283015493820184905260038301546060830181905260049093015460808301819052959950939750939550939290918790610fa75750806040015142115b8015610fbf57506a18d0bf423c03d8de000000600554105b15611069576000610fce610b43565b90506000610fda61090c565b90508115611066576000836040015142610ff4919061149f565b90506000838386608001518461100a91906114fa565b61101491906114fa565b61101e9190611511565b90506a18d0bf423c03d8de0000008160055461103a91906114e7565b111561105f57600554611058906a18d0bf423c03d8de00000061149f565b9650611063565b8096505b50505b50505b509295509295509295565b61107c61133c565b610a9b6000611369565b61108e61133c565b600080546040516001600160a01b03909116914780156108fc02929091818181858888f193505050501580156110c8573d6000803e3d6000fd5b50565b600381815481106110db57600080fd5b6000918252602090912001546001600160a01b0316905081565b6019816004811061067f57600080fd5b601d816005811061067f57600080fd5b6000610b3e61090c565b61112761133c565b6001600160a01b03811661115157604051631e4fbdf760e01b8152600060048201526024016106c6565b6110c881611369565b6010816004811061067f57600080fd5b600080806000611178610b43565b9050600061118461090c565b905060015b6001600160a01b038716600090815260026020526040902054811161125c576001600160a01b0387166000908152600160209081526040808320848452909152902060028101546111da904261149f565b95506000861180156111ec5750600084115b1561124957838382600401548861120391906114fa565b61120d91906114fa565b6112179190611511565b94504281600201819055508481600301600082825461123691906114e7565b90915550611246905085886114e7565b96505b5080611254816114ce565b915050611189565b508460000361126d57505050505050565b6a18d0bf423c03d8de0000008560055461128791906114e7565b11156112b7576005546112a5906a18d0bf423c03d8de00000061149f565b9450846000036112b757505050505050565b84600560008282546112c991906114e7565b90915550506006546040516340c10f1960e01b81526001600160a01b03888116600483015260248201889052909116906340c10f1990604401600060405180830381600087803b15801561131c57600080fd5b505af1158015611330573d6000803e3d6000fd5b50505050505050505050565b6000546001600160a01b03163314610a9b5760405163118cdaa760e01b81523360048201526024016106c6565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000602082840312156113cb57600080fd5b5035919050565b80356001600160a01b03811681146113e957600080fd5b919050565b60006020828403121561140057600080fd5b611409826113d2565b9392505050565b6000806040838503121561142357600080fd5b61142c836113d2565b946020939093013593505050565b60208082526009908201526823b0b6b29037bb32b960b91b604082015260600190565b602080825260129082015271496e76616c6964206d696e6572207479706560701b604082015260600190565b634e487b7160e01b600052601160045260246000fd5b818103818111156114b2576114b2611489565b92915050565b634e487b7160e01b600052603260045260246000fd5b6000600182016114e0576114e0611489565b5060010190565b808201808211156114b2576114b2611489565b80820281158282048414176114b2576114b2611489565b60008261152e57634e487b7160e01b600052601260045260246000fd5b50049056fea2646970667358221220fabca5574a0bddd99159e64fc04f4eb09076d27babc0aa90c7f9783b9bc51c0964736f6c6343000817003360a06040523480156200001157600080fd5b5060405162000c5538038062000c5583398101604081905262000034916200012c565b336040518060400160405280600981526020016827b932902a37b5b2b760b91b815250604051806040016040528060038152602001624f524560e81b8152508160039081620000849190620001ed565b506004620000938282620001ed565b5050506001600160a01b038116620000c557604051631e4fbdf760e01b81526000600482015260240160405180910390fd5b620000d081620000da565b50608052620002b9565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b6000602082840312156200013f57600080fd5b5051919050565b634e487b7160e01b600052604160045260246000fd5b600181811c908216806200017157607f821691505b6020821081036200019257634e487b7160e01b600052602260045260246000fd5b50919050565b601f821115620001e8576000816000526020600020601f850160051c81016020861015620001c35750805b601f850160051c820191505b81811015620001e457828155600101620001cf565b5050505b505050565b81516001600160401b0381111562000209576200020962000146565b62000221816200021a84546200015c565b8462000198565b602080601f831160018114620002595760008415620002405750858301515b600019600386901b1c1916600185901b178555620001e4565b600085815260208120601f198616915b828110156200028a5788860151825594840194600190910190840162000269565b5085821015620002a95787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b608051610979620002dc60003960008181610169015261032d01526109796000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c806370a082311161008c57806395d89b411161006657806395d89b41146101ec578063a9059cbb146101f4578063dd62ed3e14610207578063f2fde38b1461024057600080fd5b806370a08231146101a0578063715018a6146101c95780638da5cb5b146101d157600080fd5b806323b872dd116100c857806323b872dd14610142578063313ce56714610155578063355274ea1461016457806340c10f191461018b57600080fd5b806306fdde03146100ef578063095ea7b31461010d57806318160ddd14610130575b600080fd5b6100f7610253565b60405161010491906107c2565b60405180910390f35b61012061011b36600461082d565b6102e5565b6040519015158152602001610104565b6002545b604051908152602001610104565b610120610150366004610857565b6102ff565b60405160128152602001610104565b6101347f000000000000000000000000000000000000000000000000000000000000000081565b61019e61019936600461082d565b610323565b005b6101346101ae366004610893565b6001600160a01b031660009081526020819052604090205490565b61019e6103b0565b6005546040516001600160a01b039091168152602001610104565b6100f76103c4565b61012061020236600461082d565b6103d3565b6101346102153660046108b5565b6001600160a01b03918216600090815260016020908152604080832093909416825291909152205490565b61019e61024e366004610893565b6103e1565b606060038054610262906108e8565b80601f016020809104026020016040519081016040528092919081815260200182805461028e906108e8565b80156102db5780601f106102b0576101008083540402835291602001916102db565b820191906000526020600020905b8154815290600101906020018083116102be57829003601f168201915b5050505050905090565b6000336102f381858561041f565b60019150505b92915050565b60003361030d858285610431565b6103188585856104af565b506001949350505050565b61032b61050e565b7f00000000000000000000000000000000000000000000000000000000000000008161035660025490565b6103609190610922565b11156103a25760405162461bcd60e51b815260206004820152600c60248201526b10d85c08195e18d95959195960a21b60448201526064015b60405180910390fd5b6103ac828261053b565b5050565b6103b861050e565b6103c26000610571565b565b606060048054610262906108e8565b6000336102f38185856104af565b6103e961050e565b6001600160a01b03811661041357604051631e4fbdf760e01b815260006004820152602401610399565b61041c81610571565b50565b61042c83838360016105c3565b505050565b6001600160a01b0383811660009081526001602090815260408083209386168352929052205460001981146104a9578181101561049a57604051637dc7a0d960e11b81526001600160a01b03841660048201526024810182905260448101839052606401610399565b6104a9848484840360006105c3565b50505050565b6001600160a01b0383166104d957604051634b637e8f60e11b815260006004820152602401610399565b6001600160a01b0382166105035760405163ec442f0560e01b815260006004820152602401610399565b61042c838383610698565b6005546001600160a01b031633146103c25760405163118cdaa760e01b8152336004820152602401610399565b6001600160a01b0382166105655760405163ec442f0560e01b815260006004820152602401610399565b6103ac60008383610698565b600580546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b6001600160a01b0384166105ed5760405163e602df0560e01b815260006004820152602401610399565b6001600160a01b03831661061757604051634a1406b160e11b815260006004820152602401610399565b6001600160a01b03808516600090815260016020908152604080832093871683529290522082905580156104a957826001600160a01b0316846001600160a01b03167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9258460405161068a91815260200190565b60405180910390a350505050565b6001600160a01b0383166106c35780600260008282546106b89190610922565b909155506107359050565b6001600160a01b038316600090815260208190526040902054818110156107165760405163391434e360e21b81526001600160a01b03851660048201526024810182905260448101839052606401610399565b6001600160a01b03841660009081526020819052604090209082900390555b6001600160a01b03821661075157600280548290039055610770565b6001600160a01b03821660009081526020819052604090208054820190555b816001600160a01b0316836001600160a01b03167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040516107b591815260200190565b60405180910390a3505050565b60006020808352835180602085015260005b818110156107f0578581018301518582016040015282016107d4565b506000604082860101526040601f19601f8301168501019250505092915050565b80356001600160a01b038116811461082857600080fd5b919050565b6000806040838503121561084057600080fd5b61084983610811565b946020939093013593505050565b60008060006060848603121561086c57600080fd5b61087584610811565b925061088360208501610811565b9150604084013590509250925092565b6000602082840312156108a557600080fd5b6108ae82610811565b9392505050565b600080604083850312156108c857600080fd5b6108d183610811565b91506108df60208401610811565b90509250929050565b600181811c908216806108fc57607f821691505b60208210810361091c57634e487b7160e01b600052602260045260246000fd5b50919050565b808201808211156102f957634e487b7160e01b600052601160045260246000fdfea2646970667358221220060d63ca4667f5131a1aef2bb86b2351fb541cb0209b75d4c6e2edd98510890564736f6c63430008170033",
+  "deployedBytecode": "0x6080604052600436106101e65760003560e01c806362de3bd111610102578063ac30777311610095578063cc372aed11610064578063cc372aed146105fa578063df91bc111461061a578063f2fde38b1461062f578063f3afc6741461064f57600080fd5b8063ac30777314610589578063ae5820131461059e578063afaf8343146105be578063c3c97a38146105da57600080fd5b80638da5cb5b116100d15780638da5cb5b146104e95780638f3c762b14610507578063a327f4d114610547578063a49062d41461057457600080fd5b806362de3bd11461043a5780636cf639151461044d578063715018a61461049c5780638c16300d146104b157600080fd5b8063253358eb1161017a57806350d547551161014957806350d547551461036f57806352e5249a146103f0578063569bf09414610410578063612d79e81461042557600080fd5b8063253358eb146102ed578063366e3d2a146103025780633a77bf831461031e5780634e43603a1461033a57600080fd5b80630e8724b1116101b65780630e8724b11461028d5780630ec1ce16146102ad57806310541a84146102c257806321f3658b146102d857600080fd5b8062ce8066146101f25780630a762437146102255780630b8eebde1461023a5780630cfccc831461026e57600080fd5b366101ed57005b600080fd5b3480156101fe57600080fd5b5061021261020d3660046113b9565b61066f565b6040519081526020015b60405180910390f35b6102386102333660046113b9565b610686565b005b34801561024657600080fd5b506102127f000000000000000000000000000000000000000000000000000000000000000081565b34801561027a57600080fd5b506102126a18d0bf423c03d8de00000081565b34801561029957600080fd5b506102126102a83660046113b9565b6108fc565b3480156102b957600080fd5b5061021261090c565b3480156102ce57600080fd5b5061021260055481565b3480156102e457600080fd5b50610212600381565b3480156102f957600080fd5b50610238610a0a565b34801561030e57600080fd5b5061021267016345785d8a000081565b34801561032a57600080fd5b5061021267058d15e17628000081565b34801561034657600080fd5b5061035a6103553660046113ee565b610a9d565b6040805192835260208301919091520161021c565b34801561037b57600080fd5b506103c661038a366004611410565b600160208181526000938452604080852090915291835291208054918101546002820154600383015460049093015460ff909416939192909185565b6040805195151586526020860194909452928401919091526060830152608082015260a00161021c565b3480156103fc57600080fd5b5061021261040b3660046113b9565b610b24565b34801561041c57600080fd5b50610212610b34565b34801561043157600080fd5b50610212610b43565b6102386104483660046113b9565b610c1f565b34801561045957600080fd5b5061046d610468366004611410565b610eed565b6040805196151587526020870195909552938501929092526060840152608083015260a082015260c00161021c565b3480156104a857600080fd5b50610238611074565b3480156104bd57600080fd5b506006546104d1906001600160a01b031681565b6040516001600160a01b03909116815260200161021c565b3480156104f557600080fd5b506000546001600160a01b03166104d1565b34801561051357600080fd5b506105376105223660046113ee565b60046020526000908152604090205460ff1681565b604051901515815260200161021c565b34801561055357600080fd5b506102126105623660046113ee565b60026020526000908152604090205481565b34801561058057600080fd5b50610212600581565b34801561059557600080fd5b50610238611086565b3480156105aa57600080fd5b506104d16105b93660046113b9565b6110cb565b3480156105ca57600080fd5b50610212670de0b6b3a764000081565b3480156105e657600080fd5b506102126105f53660046113b9565b6110f5565b34801561060657600080fd5b506102126106153660046113b9565b611105565b34801561062657600080fd5b50610212611115565b34801561063b57600080fd5b5061023861064a3660046113ee565b61111f565b34801561065b57600080fd5b5061021261066a3660046113b9565b61115a565b6007816004811061067f57600080fd5b0154905081565b7f00000000000000000000000000000000000000000000000000000000000000004211156106cf5760405162461bcd60e51b81526004016106c69061143a565b60405180910390fd5b600181101580156106e1575060038111155b6106fd5760405162461bcd60e51b81526004016106c69061145d565b3360009081526001602090815260408083208484529091529020805460ff1661075e5760405162461bcd60e51b8152602060048201526013602482015272135a5b995c88191bd95cdb89dd08195e1a5cdd606a1b60448201526064016106c6565b60058160010154106107a65760405162461bcd60e51b815260206004820152601160248201527013585e081b195d995b081c995858da1959607a1b60448201526064016106c6565b6107af3361116a565b60008083600103610801576007600184600101546107cd919061149f565b600481106107dd576107dd6114b8565b01549150600b8360010154600581106107f8576107f86114b8565b01549050610892565b836002036108475760106001846001015461081c919061149f565b6004811061082c5761082c6114b8565b0154915060148360010154600581106107f8576107f86114b8565b8360030361089257601960018460010154610862919061149f565b60048110610872576108726114b8565b01549150601d83600101546005811061088d5761088d6114b8565b015490505b8134146108d85760405162461bcd60e51b8152602060048201526014602482015273125b98dbdc9c9958dd0811551208185b5bdd5b9d60621b60448201526064016106c6565b6001830180549060006108ea836114ce565b90915550506004909201919091555050565b600b816005811061067f57600080fd5b6000696342fd08f00f637800006005541015610930575068056bc75e2d6310000090565b69c685fa11e01ec6f00000600554101561095257506802b5e3af16b188000090565b6a018d0bf423c03d8de000006005541015610975575068015af1d78b58c4000090565b6a031a17e847807b1bc000006005541015610997575067a688906bd8b0000090565b6a06342fd08f00f63780000060055410156109b957506753444835ec58000090565b6a0c685fa11e01ec6f00000060055410156109db57506729a2241af62c000090565b6a129c8f71ad02e2a680000060055410156109fd5750671bc16d674ec8000090565b50670de0b6b3a764000090565b7f0000000000000000000000000000000000000000000000000000000000000000421115610a4a5760405162461bcd60e51b81526004016106c69061143a565b33600090815260026020526040902054610a925760405162461bcd60e51b81526020600482015260096024820152684e6f206d696e65727360b81b60448201526064016106c6565b610a9b3361116a565b565b6001600160a01b0381166000908152600260205260408120549060015b6001600160a01b0384166000908152600260205260409020548111610b1e576001600160a01b0384166000908152600160209081526040808320848452909152902060030154610b0a90836114e7565b915080610b16816114ce565b915050610aba565b50915091565b6014816005811061067f57600080fd5b6000610b3e610b43565b905090565b6000805b600354811015610c1b57600060038281548110610b6657610b666114b8565b6000918252602090912001546001600160a01b0316905060015b6001600160a01b0382166000908152600260205260409020548111610c11576001600160a01b038216600090815260016020908152604080832084845290915290205460ff1615610bff576001600160a01b0382166000908152600160209081526040808320848452909152902060040154610bfc90856114e7565b93505b80610c09816114ce565b915050610b80565b5050600101610b47565b5090565b7f0000000000000000000000000000000000000000000000000000000000000000421115610c5f5760405162461bcd60e51b81526004016106c69061143a565b60018110158015610c71575060038111155b610c8d5760405162461bcd60e51b81526004016106c69061145d565b33600090815260026020526040902054600311610ce15760405162461bcd60e51b815260206004820152601260248201527113585e081b5a5b995c9cc81c995858da195960721b60448201526064016106c6565b33600090815260026020526040902054610cfc9060016114e7565b8114610d4a5760405162461bcd60e51b815260206004820152601860248201527f4d75737420627579206d696e65727320696e206f72646572000000000000000060448201526064016106c6565b60008082600103610d6e5767016345785d8a00009150600b60005b01549050610da2565b82600203610d8a5767058d15e176280000915060146000610d65565b82600303610da2575050601d54670de0b6b3a7640000905b813414610de85760405162461bcd60e51b8152602060048201526014602482015273125b98dbdc9c9958dd0811551208185b5bdd5b9d60621b60448201526064016106c6565b6040805160a081018252600180825260208083018281524284860190815260006060860181815260808701898152338084528787528984208d855287528984209851895460ff19169015151789559451968801969096559151600280880191909155915160038701559351600490950194909455825291909152908120805491610e71836114ce565b90915550503360009081526004602052604090205460ff16610ee8576003805460018181019092557fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0180546001600160a01b031916339081179091556000908152600460205260409020805460ff191690911790555b505050565b60008060008060008060018710158015610f08575060038711155b610f245760405162461bcd60e51b81526004016106c69061145d565b5050506001600160a01b03851660009081526001602081815260408084208885528252808420815160a081018352815460ff1615801580835295830154948201859052600283015493820184905260038301546060830181905260049093015460808301819052959950939750939550939290918790610fa75750806040015142115b8015610fbf57506a18d0bf423c03d8de000000600554105b15611069576000610fce610b43565b90506000610fda61090c565b90508115611066576000836040015142610ff4919061149f565b90506000838386608001518461100a91906114fa565b61101491906114fa565b61101e9190611511565b90506a18d0bf423c03d8de0000008160055461103a91906114e7565b111561105f57600554611058906a18d0bf423c03d8de00000061149f565b9650611063565b8096505b50505b50505b509295509295509295565b61107c61133c565b610a9b6000611369565b61108e61133c565b600080546040516001600160a01b03909116914780156108fc02929091818181858888f193505050501580156110c8573d6000803e3d6000fd5b50565b600381815481106110db57600080fd5b6000918252602090912001546001600160a01b0316905081565b6019816004811061067f57600080fd5b601d816005811061067f57600080fd5b6000610b3e61090c565b61112761133c565b6001600160a01b03811661115157604051631e4fbdf760e01b8152600060048201526024016106c6565b6110c881611369565b6010816004811061067f57600080fd5b600080806000611178610b43565b9050600061118461090c565b905060015b6001600160a01b038716600090815260026020526040902054811161125c576001600160a01b0387166000908152600160209081526040808320848452909152902060028101546111da904261149f565b95506000861180156111ec5750600084115b1561124957838382600401548861120391906114fa565b61120d91906114fa565b6112179190611511565b94504281600201819055508481600301600082825461123691906114e7565b90915550611246905085886114e7565b96505b5080611254816114ce565b915050611189565b508460000361126d57505050505050565b6a18d0bf423c03d8de0000008560055461128791906114e7565b11156112b7576005546112a5906a18d0bf423c03d8de00000061149f565b9450846000036112b757505050505050565b84600560008282546112c991906114e7565b90915550506006546040516340c10f1960e01b81526001600160a01b03888116600483015260248201889052909116906340c10f1990604401600060405180830381600087803b15801561131c57600080fd5b505af1158015611330573d6000803e3d6000fd5b50505050505050505050565b6000546001600160a01b03163314610a9b5760405163118cdaa760e01b81523360048201526024016106c6565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000602082840312156113cb57600080fd5b5035919050565b80356001600160a01b03811681146113e957600080fd5b919050565b60006020828403121561140057600080fd5b611409826113d2565b9392505050565b6000806040838503121561142357600080fd5b61142c836113d2565b946020939093013593505050565b60208082526009908201526823b0b6b29037bb32b960b91b604082015260600190565b602080825260129082015271496e76616c6964206d696e6572207479706560701b604082015260600190565b634e487b7160e01b600052601160045260246000fd5b818103818111156114b2576114b2611489565b92915050565b634e487b7160e01b600052603260045260246000fd5b6000600182016114e0576114e0611489565b5060010190565b808201808211156114b2576114b2611489565b80820281158282048414176114b2576114b2611489565b60008261152e57634e487b7160e01b600052601260045260246000fd5b50049056fea2646970667358221220fabca5574a0bddd99159e64fc04f4eb09076d27babc0aa90c7f9783b9bc51c0964736f6c63430008170033",
+  "devdoc": {
+    "errors": {
+      "OwnableInvalidOwner(address)": [
+        {
+          "details": "The owner is not a valid owner account. (eg. `address(0)`)"
+        }
+      ],
+      "OwnableUnauthorizedAccount(address)": [
+        {
+          "details": "The caller account is not authorized to perform an operation."
+        }
+      ]
+    },
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 8,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 1007,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miners",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(MinerData)1000_storage))"
+      },
+      {
+        "astId": 1011,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "minerCount",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 1014,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "allMiners",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 1018,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "registeredMiners",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 1020,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "totalMinedGlobal",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 1025,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "ore",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_contract(OREToken)987"
+      },
+      {
+        "astId": 1046,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner1UpgradeCosts",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_array(t_uint256)4_storage"
+      },
+      {
+        "astId": 1056,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner1Powers",
+        "offset": 0,
+        "slot": "11",
+        "type": "t_array(t_uint256)5_storage"
+      },
+      {
+        "astId": 1068,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner2UpgradeCosts",
+        "offset": 0,
+        "slot": "16",
+        "type": "t_array(t_uint256)4_storage"
+      },
+      {
+        "astId": 1078,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner2Powers",
+        "offset": 0,
+        "slot": "20",
+        "type": "t_array(t_uint256)5_storage"
+      },
+      {
+        "astId": 1090,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner3UpgradeCosts",
+        "offset": 0,
+        "slot": "25",
+        "type": "t_array(t_uint256)4_storage"
+      },
+      {
+        "astId": 1100,
+        "contract": "contracts/TimeMiner.sol:TimeMiner",
+        "label": "miner3Powers",
+        "offset": 0,
+        "slot": "29",
+        "type": "t_array(t_uint256)5_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_uint256)4_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[4]",
+        "numberOfBytes": "128"
+      },
+      "t_array(t_uint256)5_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[5]",
+        "numberOfBytes": "160"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(OREToken)987": {
+        "encoding": "inplace",
+        "label": "contract OREToken",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_mapping(t_uint256,t_struct(MinerData)1000_storage))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(uint256 => struct TimeMiner.MinerData))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_uint256,t_struct(MinerData)1000_storage)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_uint256,t_struct(MinerData)1000_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct TimeMiner.MinerData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(MinerData)1000_storage"
+      },
+      "t_struct(MinerData)1000_storage": {
+        "encoding": "inplace",
+        "label": "struct TimeMiner.MinerData",
+        "members": [
+          {
+            "astId": 991,
+            "contract": "contracts/TimeMiner.sol:TimeMiner",
+            "label": "exists",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool"
+          },
+          {
+            "astId": 993,
+            "contract": "contracts/TimeMiner.sol:TimeMiner",
+            "label": "level",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 995,
+            "contract": "contracts/TimeMiner.sol:TimeMiner",
+            "label": "lastClaim",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 997,
+            "contract": "contracts/TimeMiner.sol:TimeMiner",
+            "label": "totalMined",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 999,
+            "contract": "contracts/TimeMiner.sol:TimeMiner",
+            "label": "power",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "160"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
