@@ -42,7 +42,7 @@ export const ChatBot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY;
+      const apiKey = process.env.GROQ_API_KEY;
       if (!apiKey) {
         throw new Error('Groq API key not found');
       }
