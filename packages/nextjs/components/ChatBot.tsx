@@ -77,7 +77,7 @@ export const ChatBot: React.FC = () => {
             <div className="flex items-center gap-2">
               <div className="relative w-8 h-8 rounded-full overflow-hidden">
                 <Image
-                  src="/img/1-1.jpg"
+                  src="/img/bot.png"
                   alt="Chrono Avatar"
                   width={32}
                   height={32}
@@ -102,7 +102,7 @@ export const ChatBot: React.FC = () => {
                 {message.role === 'assistant' && (
                   <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0">
                     <Image
-                      src="/img/1-1.jpg"
+                      src="/img/bot.png"
                       alt="Chrono Avatar"
                       width={24}
                       height={24}
@@ -125,7 +125,7 @@ export const ChatBot: React.FC = () => {
               <div className="flex justify-start">
                 <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0">
                   <Image
-                    src="/img/1-1.jpg"
+                    src="/img/bot.png"
                     alt="Chrono Avatar"
                     width={24}
                     height={24}
