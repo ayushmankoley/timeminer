@@ -507,7 +507,7 @@ export default function TimeMiner() {
                     setBuyHover(newHover);
                   }}
                 >
-                  {buyHover[0] ? "Cost: 0.1 ETH" : "Buy First Miner"}
+                  {buyHover[0] ? "Cost: 0.1 MON" : "Buy First Miner (0.1 MON)"}
                 </button>
               </div>
               <div className="mt-6 text-success">
