@@ -387,7 +387,7 @@ export default function TimeMiner() {
                           >
                             {minerStats[selectedMiner - 1][1] >= 5n
                               ? "Max Level"
-                              : `Upgrade Miner (${getUpgradeCost(selectedMiner)} ETH)`}
+                              : `Upgrade Miner (${getUpgradeCost(selectedMiner)} MON)`}
                           </button>
                         )}
                       </div>
@@ -410,7 +410,7 @@ export default function TimeMiner() {
                         }}
                       >
                         {buyHover[selectedMiner - 1]
-                          ? `Cost: ${MINER_INITIAL_COSTS[selectedMiner - 1]} ETH`
+                          ? `Cost: ${MINER_INITIAL_COSTS[selectedMiner - 1]} MON`
                           : `Buy Miner ${selectedMiner}`}
                       </button>
                     </div>
