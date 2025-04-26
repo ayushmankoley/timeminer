@@ -492,6 +492,15 @@ export default function TimeMiner() {
             <div className="card-body items-center text-center">
               <h2 className="card-title text-2xl mb-4">Start Your Mining Journey!</h2>
               <p className="mb-4">Purchase your first miner to begin collecting valuable $ORE from the blockchain.</p>
+
+              <div className="w-48 h-48 mb-4 rounded-lg overflow-hidden">
+                <img 
+                  src="/img/1-1.jpg" 
+                  alt="Genesis Miner" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div className="card-actions">
                 <button
                   className="btn btn-lg btn-primary"
