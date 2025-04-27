@@ -491,6 +491,31 @@ export default function Documentation() {
                     </div>
                   </div>
                 </div>
+
+                {/* Powered By Section */}
+                <div className="card bg-base-300 p-4 mt-4">
+                  <div className="card-body p-2">
+                    <h3 className="text-lg font-bold text-center">Powered By</h3>
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-2">
+                      <div className="flex flex-col items-center">
+                        <img 
+                          src="https://cdn.prod.website-files.com/667c57e6f9254a4b6d914440/66956efeb01de969bd7b8abc_Logo%20Horizontal.svg" 
+                          alt="Monad Logo" 
+                          className="h-10 mb-2 bg-white p-2 rounded-lg shadow-sm" 
+                        />
+                        <span className="text-sm">Monad</span>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <img 
+                          src="https://groq.com/wp-content/uploads/2024/03/GroqLogo_Black.svg" 
+                          alt="Groq Logo" 
+                          className="h-10 mb-2 bg-white p-2 rounded-lg shadow-sm" 
+                        />
+                        <span className="text-sm">Groq</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
             )}
           </div>
