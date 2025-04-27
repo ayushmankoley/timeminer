@@ -218,6 +218,7 @@ export default function Documentation() {
                           <thead>
                             <tr>
                               <th>Level</th>
+                              <th>Image</th>
                               <th>Name</th>
                               <th>Upgrade Cost (MON)</th>
                               <th>Power</th>
@@ -226,30 +227,35 @@ export default function Documentation() {
                           <tbody>
                             <tr>
                               <td>1</td>
+                              <td><img src="/img/1-1.jpg" alt="Genesis Miner" className="w-16 h-16 rounded" /></td>
                               <td>Genesis Miner</td>
                               <td>0.1 (Initial Cost)</td>
                               <td>1</td>
                             </tr>
                             <tr>
                               <td>2</td>
+                              <td><img src="/img/1-2.jpg" alt="Fusion Miner" className="w-16 h-16 rounded" /></td>
                               <td>Fusion Miner</td>
                               <td>0.025</td>
                               <td>2</td>
                             </tr>
                             <tr>
                               <td>3</td>
+                              <td><img src="/img/1-3.jpg" alt="Nova Miner" className="w-16 h-16 rounded" /></td>
                               <td>Nova Miner</td>
                               <td>0.05</td>
                               <td>3</td>
                             </tr>
                             <tr>
                               <td>4</td>
+                              <td><img src="/img/1-4.jpg" alt="Quantum Miner" className="w-16 h-16 rounded" /></td>
                               <td>Quantum Miner</td>
                               <td>0.1</td>
                               <td>4</td>
                             </tr>
                             <tr>
                               <td>5</td>
+                              <td><img src="/img/1-5.jpg" alt="Singularity Miner" className="w-16 h-16 rounded" /></td>
                               <td>Singularity Miner</td>
                               <td>0.2</td>
                               <td>5</td>
@@ -272,6 +278,7 @@ export default function Documentation() {
                           <thead>
                             <tr>
                               <th>Level</th>
+                              <th>Image</th>
                               <th>Name</th>
                               <th>Upgrade Cost (MON)</th>
                               <th>Power</th>
@@ -280,30 +287,35 @@ export default function Documentation() {
                           <tbody>
                             <tr>
                               <td>1</td>
+                              <td><img src="/img/2-1.jpg" alt="Pioneer Rig" className="w-16 h-16 rounded" /></td>
                               <td>Pioneer Rig</td>
                               <td>0.4 (Initial Cost)</td>
                               <td>1</td>
                             </tr>
                             <tr>
                               <td>2</td>
+                              <td><img src="/img/2-2.jpg" alt="Vanguard Rig" className="w-16 h-16 rounded" /></td>
                               <td>Vanguard Rig</td>
                               <td>0.15</td>
                               <td>2</td>
                             </tr>
                             <tr>
                               <td>3</td>
+                              <td><img src="/img/2-3.jpg" alt="Titan Rig" className="w-16 h-16 rounded" /></td>
                               <td>Titan Rig</td>
                               <td>0.25</td>
                               <td>3</td>
                             </tr>
                             <tr>
                               <td>4</td>
+                              <td><img src="/img/2-4.jpg" alt="Eclipse Rig" className="w-16 h-16 rounded" /></td>
                               <td>Eclipse Rig</td>
                               <td>0.5</td>
                               <td>4</td>
                             </tr>
                             <tr>
                               <td>5</td>
+                              <td><img src="/img/2-5.jpg" alt="Infinity Rig" className="w-16 h-16 rounded" /></td>
                               <td>Infinity Rig</td>
                               <td>0.7</td>
                               <td>5</td>
@@ -326,6 +338,7 @@ export default function Documentation() {
                           <thead>
                             <tr>
                               <th>Level</th>
+                              <th>Image</th>
                               <th>Name</th>
                               <th>Upgrade Cost (MON)</th>
                               <th>Power</th>
@@ -334,30 +347,35 @@ export default function Documentation() {
                           <tbody>
                             <tr>
                               <td>1</td>
+                              <td><img src="/img/3-1.jpg" alt="Pulse Core" className="w-16 h-16 rounded" /></td>
                               <td>Pulse Core</td>
                               <td>1.0 (Initial Cost)</td>
                               <td>2</td>
                             </tr>
                             <tr>
                               <td>2</td>
+                              <td><img src="/img/3-2.jpg" alt="Blaze Core" className="w-16 h-16 rounded" /></td>
                               <td>Blaze Core</td>
                               <td>0.5</td>
                               <td>4</td>
                             </tr>
                             <tr>
                               <td>3</td>
+                              <td><img src="/img/3-3.jpg" alt="Hyper Core" className="w-16 h-16 rounded" /></td>
                               <td>Hyper Core</td>
                               <td>1.0</td>
                               <td>6</td>
                             </tr>
                             <tr>
                               <td>4</td>
+                              <td><img src="/img/3-4.jpg" alt="Aether Core" className="w-16 h-16 rounded" /></td>
                               <td>Aether Core</td>
                               <td>1.25</td>
                               <td>8</td>
                             </tr>
                             <tr>
                               <td>5</td>
+                              <td><img src="/img/3-5.jpg" alt="Omni Core" className="w-16 h-16 rounded" /></td>
                               <td>Omni Core</td>
                               <td>1.25</td>
                               <td>10</td>
