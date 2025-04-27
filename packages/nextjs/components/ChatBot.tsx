@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { IoChatbubbleEllipsesOutline } from 'react-icons/io5';
-import { IoMdClose } from 'react-icons/io';
-import { sendMessage } from '~~/services/chatService';
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { IoMdClose } from "react-icons/io";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { sendMessage } from "~~/services/chatService";
 
 interface Message {
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
 }
 
 const INITIAL_MESSAGE: Message = {
-  role: 'assistant',
+  role: "assistant",
   content: `Welcome to TimeMiner! 🎮
 
 • I'm Chrono, your dedicated game assistant and blockchain expert! ⚡️
@@ -23,33 +23,33 @@ const INITIAL_MESSAGE: Message = {
 
 • Feel free to ask me anything about the game or blockchain mining!
 
-⚡️ Ready to mine some knowledge? Let's get started!`
+⚡️ Ready to mine some knowledge? Let's get started!`,
 };
 
 export const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage: Message = { role: 'user', content: input };
+    const userMessage: Message = { role: "user", content: input };
     setMessages(prev => [...prev, userMessage]);
-    setInput('');
+    setInput("");
     setIsLoading(true);
 
     try {
       const response = await sendMessage(input);
-      const assistantMessage: Message = { role: 'assistant', content: response };
+      const assistantMessage: Message = { role: "assistant", content: response };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       const errorMessage: Message = {
-        role: 'assistant',
-        content: 'Sorry, I encountered an error. Please try again later.',
+        role: "assistant",
+        content: "Sorry, I encountered an error. Please try again later.",
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -71,13 +71,7 @@ export const ChatBot: React.FC = () => {
           <div className="p-4 bg-primary text-white rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                <Image
-                  src="/img/bot.png"
-                  alt="Chrono Avatar"
-                  width={32}
-                  height={32}
-                  className="object-cover"
-                />
+                <Image src="/img/bot.png" alt="Chrono Avatar" width={32} height={32} className="object-cover" />
               </div>
               <h3 className="font-semibold">Chrono - TimeMiner Assistant</h3>
             </div>
@@ -85,31 +79,18 @@ export const ChatBot: React.FC = () => {
               <IoMdClose className="w-6 h-6" />
             </button>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
-              >
-                {message.role === 'assistant' && (
+              <div key={index} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                {message.role === "assistant" && (
                   <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0">
-                    <Image
-                      src="/img/bot.png"
-                      alt="Chrono Avatar"
-                      width={24}
-                      height={24}
-                      className="object-cover"
-                    />
+                    <Image src="/img/bot.png" alt="Chrono Avatar" width={24} height={24} className="object-cover" />
                   </div>
                 )}
                 <div
                   className={`max-w-[80%] p-3 rounded-lg ${
-                    message.role === 'user'
-                      ? 'bg-primary text-white'
-                      : 'bg-base-200'
+                    message.role === "user" ? "bg-primary text-white" : "bg-base-200"
                   }`}
                 >
                   <div className="whitespace-pre-wrap">{message.content}</div>
@@ -119,17 +100,9 @@ export const ChatBot: React.FC = () => {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0">
-                  <Image
-                    src="/img/bot.png"
-                    alt="Chrono Avatar"
-                    width={24}
-                    height={24}
-                    className="object-cover"
-                  />
+                  <Image src="/img/bot.png" alt="Chrono Avatar" width={24} height={24} className="object-cover" />
                 </div>
-                <div className="bg-base-200 p-3 rounded-lg">
-                  Chrono is thinking... ⏳
-                </div>
+                <div className="bg-base-200 p-3 rounded-lg">Chrono is thinking... ⏳</div>
               </div>
             )}
           </div>
@@ -139,16 +112,12 @@ export const ChatBot: React.FC = () => {
               <input
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={e => setInput(e.target.value)}
                 placeholder="Ask Chrono anything..."
                 className="input input-bordered flex-1"
                 disabled={isLoading}
               />
-              <button
-                type="submit"
-                className="btn btn-primary"
-                disabled={isLoading || !input.trim()}
-              >
+              <button type="submit" className="btn btn-primary" disabled={isLoading || !input.trim()}>
                 Send
               </button>
             </div>
@@ -157,4 +126,4 @@ export const ChatBot: React.FC = () => {
       )}
     </div>
   );
-}; 
+};

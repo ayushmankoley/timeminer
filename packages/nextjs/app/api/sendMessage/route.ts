@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { Groq } from 'groq-sdk';
+import { NextResponse } from "next/server";
+import { Groq } from "groq-sdk";
 
 const SYSTEM_PROMPT = `You are Chrono, the friendly and knowledgeable TimeMiner game assistant. You have a playful and energetic personality, and you love using emojis to make your responses more engaging. Your main purpose is to help users understand the TimeMiner game and blockchain mining concepts.
 
@@ -19,20 +19,14 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { message } = body;
-    
+
     if (!message) {
-      return NextResponse.json(
-        { message: 'No message provided' },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: "No message provided" }, { status: 400 });
     }
 
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
-      return NextResponse.json(
-        { message: 'GROQ_API_KEY not found in environment variables' },
-        { status: 500 }
-      );
+      return NextResponse.json({ message: "GROQ_API_KEY not found in environment variables" }, { status: 500 });
     }
 
     const groq = new Groq({
@@ -41,14 +35,14 @@ export async function POST(request: Request) {
     });
 
     const chatCompletion = await groq.chat.completions.create({
-      model: 'meta-llama/llama-4-maverick-17b-128e-instruct',
+      model: "meta-llama/llama-4-maverick-17b-128e-instruct",
       messages: [
         {
-          role: 'system',
+          role: "system",
           content: SYSTEM_PROMPT,
         },
         {
-          role: 'user',
+          role: "user",
           content: message,
         },
       ],
@@ -56,13 +50,10 @@ export async function POST(request: Request) {
       max_tokens: 1024,
     });
 
-    const assistantReply = chatCompletion.choices[0]?.message?.content || '';
+    const assistantReply = chatCompletion.choices[0]?.message?.content || "";
     return NextResponse.json({ reply: assistantReply });
   } catch (error) {
-    console.error('Error in API route:', error);
-    return NextResponse.json(
-      { message: 'Failed to fetch from Groq API' },
-      { status: 500 }
-    );
+    console.error("Error in API route:", error);
+    return NextResponse.json({ message: "Failed to fetch from Groq API" }, { status: 500 });
   }
-} 
+}
